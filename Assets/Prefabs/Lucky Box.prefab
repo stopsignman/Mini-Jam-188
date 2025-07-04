@@ -123,3 +123,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   events:
   - {fileID: 920723978040985671, guid: 85134854113feeb409c36e5b4565b66c, type: 3}
+  - {fileID: 9172480778186653771, guid: 806691118aa905344b9c5f3a432db869, type: 3}
+  - {fileID: 8053704858627040648, guid: 0050a2d4d4f3f544bbc447cb0df41f39, type: 3}
+  - {fileID: 1842289766822789324, guid: 57e6018be955d374a8c71b241797aee7, type: 3}
+  - {fileID: 1299801800427330819, guid: 2bfc435e9644c964eb1186a925450e57, type: 3}
+  - {fileID: 8484072450905294257, guid: 1760b48014fcfed45bbc48f9813ff153, type: 3}
+  - {fileID: 8552928217795744962, guid: 25289cd825a17474493a16f4f2fec6fc, type: 3}
+  index: 0
