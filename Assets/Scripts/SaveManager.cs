@@ -3,6 +3,7 @@ using UnityEngine;
 public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance;
+    public float mouseSensitivity = 400f;
 
     void Awake()
     {
