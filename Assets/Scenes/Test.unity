@@ -119,35 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &261091468 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3145134411065888584, guid: 0163b199969d48f4884206b4924b5c76, type: 3}
-  m_PrefabInstance: {fileID: 8167785332231594586}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &261091476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 261091468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c46224eab6c386744a122d1ef9b5348c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &261091477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 261091468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc025eac790f5604c88240344479e5ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &817483593
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,6 +457,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9223034888816704101, guid: 01f69c585f3e67542b05a01d75d33c78, type: 3}
+      propertyPath: playerChange
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -546,13 +521,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3145134411065888584, guid: 0163b199969d48f4884206b4924b5c76, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 261091477}
-    - targetCorrespondingSourceObject: {fileID: 3145134411065888584, guid: 0163b199969d48f4884206b4924b5c76, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 261091476}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0163b199969d48f4884206b4924b5c76, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
