@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a2410850e8ffc5429a1d8ad5093977e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: 
+  holdOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &6594625178698479977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,4 +135,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a5cb6ece274ad41b38dbb6494409b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactText: 
+  holdOffset: {x: 0.8, y: 0.1, z: 1.4}

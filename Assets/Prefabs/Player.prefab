@@ -338,6 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c68e8993acd614083713f463ee34cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveMultiplier: 1
   orientation: {fileID: 6941781558168072932}
   groundDrag: 5
   playerHeight: 2
@@ -370,7 +371,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc025eac790f5604c88240344479e5ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 100
+  maxHealth: 100
 --- !u!114 &2136610554205850015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,3 +385,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c46224eab6c386744a122d1ef9b5348c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blow: 10
+  damageMultiplier: 1

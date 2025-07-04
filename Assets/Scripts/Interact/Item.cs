@@ -2,8 +2,40 @@ using UnityEngine;
 
 public class Item : Interactable
 {
-    public override void OnInteract()
+    public Vector3 holdOffset;
+    public Sprite inventorySprite;
+    public bool held = false;
+    private GameObject playerRef;
+    public override void OnInteract(GameObject player)
     {
-        Destroy(gameObject);
+        playerRef = player;
+        InventoryHolder inventory = player.GetComponent<InventoryHolder>();
+        if (inventory == null)
+        {
+            Debug.LogError("Player does not have inventory script");
+        }
+        else
+        {
+            inventory.AddToInventory(gameObject);
+        }
+    }
+
+    public void FollowPlayer()
+    {
+        Transform orientation = playerRef.transform.GetChild(1).transform;
+        if (orientation == null)
+        {
+            Debug.LogError("Orientation not found");
+        }
+        else
+        {
+            transform.SetParent(playerRef.transform.GetChild(0).transform);
+            transform.localPosition = new Vector3(0, 0, 0);
+            transform.localPosition += holdOffset;
+        }
+    }
+
+    private void Update()
+    { 
     }
 }

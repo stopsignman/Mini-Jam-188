@@ -25,7 +25,7 @@ public class Interactor : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && currentTargetedInteractable != null)
         {
-            currentTargetedInteractable.OnInteract();
+            currentTargetedInteractable.OnInteract(gameObject);
         }
     }
 }

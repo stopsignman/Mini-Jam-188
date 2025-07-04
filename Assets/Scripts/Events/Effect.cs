@@ -5,6 +5,8 @@ public class Effect : Event
 {
     public bool playerChange;
     public bool gunChange;
+    private float damangeMultiplierIncrease = 2f;
+    private float movementMultiplierIncrease = 2f;
 
     private void Start()
     {
@@ -26,13 +28,13 @@ public class Effect : Event
                 {
                     case 0:
                         Shooter shooter = player.GetComponent<Shooter>();
-                        shooter.damageMultiplier = 2;
+                        shooter.damageMultiplier = damangeMultiplierIncrease;
                         StartCoroutine(RemoveDamageIncrease(shooter));
                         Debug.Log("damage increase");
                         break;
                     case 1:
                         FirstPersonPlayer playerController = player.GetComponent<FirstPersonPlayer>();
-                        playerController.moveMultiplier = 2;
+                        playerController.moveMultiplier = movementMultiplierIncrease;
                         StartCoroutine(RemoveMovementIncrease(playerController));
                         Debug.Log("movement increase");
                         break;
