@@ -34,6 +34,7 @@ public class InventoryHolder : MonoBehaviour
         if (heldItem != null)
         {
             heldItem.SetActive(false);
+            heldItem.GetComponent<Item>().held = false;
         }
         GameObject itemToHold = heldItems[index];
         Item itemScript = itemToHold.GetComponent<Item>();
@@ -62,6 +63,7 @@ public class InventoryHolder : MonoBehaviour
         Ray down_ray = new Ray(for_point, Vector3.down);
         Vector3 point = down_ray.GetPoint(dropHeight * 0.5f);
         heldItem.GetComponent<Item>().Detach(point);
+        heldItem.GetComponent<Item>().held = false;
         heldItems.RemoveAt(heldIndex);
         heldItem = null;
         if (heldItems.Count >= 1)

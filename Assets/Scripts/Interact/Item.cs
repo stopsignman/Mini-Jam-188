@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Item : Interactable
 {
@@ -18,6 +19,11 @@ public class Item : Interactable
         {
             inventory.AddToInventory(gameObject);
         }
+    }
+
+    public virtual void UseItem()
+    {
+        
     }
 
     public void FollowPlayer()
@@ -44,5 +50,18 @@ public class Item : Interactable
         MeshCollider collider = gameObject.AddComponent<MeshCollider>();
         collider.convex = true;
         collider.sharedMesh = gameObject.GetComponent<MeshFilter>().mesh;
+    }
+
+    private void HandleInput()
+    {
+        if (Input.GetMouseButtonDown(0) && held)
+        {
+            UseItem();
+        }
+    }
+
+    private void Update()
+    {
+        HandleInput();   
     }
 }
