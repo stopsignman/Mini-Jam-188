@@ -32,10 +32,17 @@ public class Item : Interactable
             transform.SetParent(playerRef.transform.GetChild(0).transform);
             transform.localPosition = new Vector3(0, 0, 0);
             transform.localPosition += holdOffset;
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
     }
 
-    private void Update()
-    { 
+    public void Detach(Vector3 groundPoint)
+    {
+        transform.SetParent(null);
+        transform.position = groundPoint;
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+        MeshCollider collider = gameObject.AddComponent<MeshCollider>();
+        collider.convex = true;
+        collider.sharedMesh = gameObject.GetComponent<MeshFilter>().mesh;
     }
 }

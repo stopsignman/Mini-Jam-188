@@ -12,6 +12,7 @@ public class InventoryHolder : MonoBehaviour
     public GameObject ui;
     public List<GameObject> slots;
     private IEnumerator hideCoroutine;
+    public float dropHeight = 1f;
 
     public void AddToInventory(GameObject item)
     {
@@ -22,7 +23,7 @@ public class InventoryHolder : MonoBehaviour
         else
         {
             heldItems.Add(item);
-            Destroy(item.GetComponent<SphereCollider>());
+            Destroy(item.GetComponent<MeshCollider>());
             item.SetActive(false);
             HoldItem(heldItems.Count - 1);
         }
@@ -44,19 +45,33 @@ public class InventoryHolder : MonoBehaviour
         {
             itemToHold.SetActive(true);
             heldItem = itemToHold;
+            heldIndex = index;
             itemScript.held = true;
             itemScript.FollowPlayer();
-            UpdateUI(index, itemScript);
+            UpdateUI();
         }
-
     }
 
     private void DropHeldItem()
     {
-
+        // dont ask me why this works
+        dropHeight = 1f;
+        Transform orientation = transform.GetChild(1).gameObject.transform;
+        Ray for_ray = new Ray(transform.position, orientation.right);
+        Vector3 for_point = for_ray.GetPoint(1f);
+        Ray down_ray = new Ray(for_point, Vector3.down);
+        Vector3 point = down_ray.GetPoint(dropHeight * 0.5f);
+        heldItem.GetComponent<Item>().Detach(point);
+        heldItems.RemoveAt(heldIndex);
+        heldItem = null;
+        if (heldItems.Count >= 1)
+        {
+            HoldItem(0);
+        }
+        UpdateUI();
     }
 
-    private void UpdateUI(int index, Item heldItem)
+    private void UpdateUI()
     {
         if (hideCoroutine != null)
         {
@@ -64,9 +79,23 @@ public class InventoryHolder : MonoBehaviour
         }
         hideCoroutine = HideUI();
         ui.SetActive(true);
-        Sprite image = heldItem.inventorySprite;
 
-        slots[index].GetComponent<Image>().sprite = image;
+        for (int i = 0; i < slots.Count; i++)
+        {
+            slots[i].GetComponent<Image>().sprite = null;
+            slots[i].GetComponent<Image>().color = new Color(0, 0, 0, 0);
+        }
+
+        if (heldItems.Count != 0)
+        {
+           for (int i = 0; i < heldItems.Count; i++)
+            {
+                Sprite image = heldItems[i].GetComponent<Item>().inventorySprite;
+
+                slots[i].GetComponent<Image>().sprite = image;
+                slots[i].GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            } 
+        } 
         StartCoroutine(hideCoroutine);
     }
 
@@ -112,6 +141,11 @@ public class InventoryHolder : MonoBehaviour
             {
                 HoldItem(4);
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q) && heldItem != null)
+        {
+            DropHeldItem();
         }
     }
 
