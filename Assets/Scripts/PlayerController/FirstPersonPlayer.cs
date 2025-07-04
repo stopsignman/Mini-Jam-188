@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class FirstPersonPlayer : MonoBehaviour
 {
-    private float moveSpeed = 7f;
-    private float sprintSpeed = 75f;
+    private float moveSpeed = 4f;
+    private float sprintSpeed = 45f;
+    public float moveMultiplier = 1f;
     private bool running = false;
     [SerializeField]
     private Transform orientation;
@@ -60,22 +61,22 @@ public class FirstPersonPlayer : MonoBehaviour
         {
             if (running)
             {
-                rb.AddForce(moveDirection.normalized * sprintSpeed * 10f, ForceMode.Force);
+                rb.AddForce(moveDirection.normalized * sprintSpeed * 10f * moveMultiplier, ForceMode.Force);
             }
             else
             {
-                rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+                rb.AddForce(moveDirection.normalized * moveSpeed * 10f * moveMultiplier, ForceMode.Force);
             }
         }
         else
         {
             if (running)
             {
-                rb.AddForce(moveDirection.normalized * sprintSpeed * 10f * airMultipler, ForceMode.Force);
+                rb.AddForce(moveDirection.normalized * sprintSpeed * 10f * airMultipler * moveMultiplier, ForceMode.Force);
             }
             else
             {
-                rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultipler, ForceMode.Force);
+                rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultipler * moveMultiplier, ForceMode.Force);
             }
             
         }
