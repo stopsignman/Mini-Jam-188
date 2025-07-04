@@ -7,6 +7,8 @@ public class Effect : Event
     public bool gunChange;
     private float damangeMultiplierIncrease = 2f;
     private float movementMultiplierIncrease = 2f;
+    [Tooltip("Player: 0: damage increase, 1: increase movement speed, 2: lose half hp, 3: heal half hp \n Gun: 0: Magazine size increase, 1: Ammo refill")]
+    public int index;
 
     private void Start()
     {
@@ -20,11 +22,7 @@ public class Effect : Event
             if (player != null)
             {
                 Damagee damagee = player.GetComponent<Damagee>();
-                // 0: damage increase
-                // 1: increase movement speed
-                // 2: lose half hp
-                // 3: heal half hp
-                switch (Random.Range(0, 4))
+                switch (index)
                 {
                     case 0:
                         Shooter shooter = player.GetComponent<Shooter>();
