@@ -25,7 +25,7 @@ public class Effect : Event
                 switch (index)
                 {
                     case 0:
-                        Shooter shooter = player.GetComponent<Shooter>();
+                        FirstPersonPlayer shooter = player.GetComponent<FirstPersonPlayer>();
                         shooter.damageMultiplier = damangeMultiplierIncrease;
                         StartCoroutine(RemoveDamageIncrease(shooter));
                         Debug.Log("damage increase");
@@ -54,7 +54,7 @@ public class Effect : Event
         }
     }
 
-    IEnumerator RemoveDamageIncrease(Shooter shooter)
+    IEnumerator RemoveDamageIncrease(FirstPersonPlayer shooter)
     {
         yield return new WaitForSeconds(60);
         shooter.damageMultiplier = 1;
