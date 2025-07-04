@@ -56,13 +56,13 @@ public class Effect : Event
 
     IEnumerator RemoveDamageIncrease(Shooter shooter)
     {
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(60);
         shooter.damageMultiplier = 1;
     }
 
     IEnumerator RemoveMovementIncrease(FirstPersonPlayer playerController)
     {
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(60);
         playerController.moveMultiplier = 1;
     }
 }
