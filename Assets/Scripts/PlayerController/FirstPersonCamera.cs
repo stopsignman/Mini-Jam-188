@@ -6,6 +6,8 @@ public class FirstPersonCamera : MonoBehaviour
     private float mouseSensitivity = 400f;
     [SerializeField]
     private Transform orientation;
+    [SerializeField]
+    private Transform X_orientation;
     private float xRot;
     private float yRot;
     private float mouseX;
@@ -22,6 +24,7 @@ public class FirstPersonCamera : MonoBehaviour
         CalculateInput();
         transform.rotation = Quaternion.Euler(xRot, yRot, 0);
         orientation.rotation = Quaternion.Euler(0, yRot, 0);
+        X_orientation.rotation = Quaternion.Euler(xRot, 0, 0);
     }
 
     private void CalculateInput()
