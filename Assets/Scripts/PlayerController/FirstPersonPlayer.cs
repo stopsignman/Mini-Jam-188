@@ -37,27 +37,21 @@ public class FirstPersonPlayer : MonoBehaviour
         rb.freezeRotation = true;
     }
 
-    public void PauseGame()
+    public void ReturnToMenu()
     {
-        pauseUI.SetActive(true);
-        gamePaused = true;
-        Time.timeScale = 0;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        SaveManager.Instance.ReturnToMenu();
     }
-
     public void UnPauseGame()
     {
         pauseUI.SetActive(false);
         gamePaused = false;
-        Time.timeScale = 1;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        SaveManager.Instance.UnPauseGame();
     }
-
-    public void ReturnToMenu()
+    public void PauseGame()
     {
-        SceneManager.LoadScene(0);
+        pauseUI.SetActive(true);
+        gamePaused = true;
+        SaveManager.Instance.PauseGame();
     }
 
     private void CalculateInput()
@@ -89,16 +83,6 @@ public class FirstPersonPlayer : MonoBehaviour
             {
                 PauseGame();
             }
-            // if (SaveManager.Instance.gamePaused)
-            // {
-            //     Time.timeScale = 1;
-            //     SaveManager.Instance.gamePaused = false;
-            // }
-            // else
-            // {
-            //     Time.timeScale = 0;
-            //     SaveManager.Instance.gamePaused = true;
-            // }
         }
     }
 
