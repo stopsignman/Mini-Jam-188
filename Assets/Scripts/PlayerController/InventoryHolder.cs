@@ -23,7 +23,7 @@ public class InventoryHolder : MonoBehaviour
         else
         {
             heldItems.Add(item);
-            Destroy(item.GetComponent<MeshCollider>());
+            item.GetComponent<BoxCollider>().enabled = false;
             item.SetActive(false);
             HoldItem(heldItems.Count - 1);
         }

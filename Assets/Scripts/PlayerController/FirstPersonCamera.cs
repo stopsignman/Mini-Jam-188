@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class FirstPersonCamera : MonoBehaviour
 {
-    private float mouseSensitivity = SaveManager.Instance.mouseSensitivity;
+    // SaveManager.Instance.mouseSensitivity
+    private float mouseSensitivity = 400f;
     [SerializeField]
     private Transform orientation;
     [SerializeField]
