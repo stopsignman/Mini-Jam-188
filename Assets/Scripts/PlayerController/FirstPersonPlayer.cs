@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class FirstPersonPlayer : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class FirstPersonPlayer : MonoBehaviour
     public float damageMultiplier = 1f;
     public bool gamePaused = false;
     public GameObject pauseUI;
+    public Slider healthBar;
 
     private void Start()
     {
@@ -127,6 +129,7 @@ public class FirstPersonPlayer : MonoBehaviour
         }
         CalculateInput();
         SpeedControl();
+        healthBar.value = gameObject.GetComponent<Damagee>().health;
     }
 
     private void FixedUpdate()

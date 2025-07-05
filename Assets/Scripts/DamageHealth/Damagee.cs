@@ -39,6 +39,7 @@ public class Damagee : MonoBehaviour
                 playerCam.gameObject.transform.SetParent(null);
                 playerCam.gameObject.transform.position = down_point;
                 playerCam.gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
+                gameObject.GetComponent<FirstPersonPlayer>().healthBar.transform.parent.gameObject.SetActive(false);
                 StartCoroutine(DelayDeath());
             }
         }
