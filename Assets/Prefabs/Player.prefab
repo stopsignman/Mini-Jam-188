@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6941781558168072932}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Orientation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2959737413088747417}
   - component: {fileID: 5451430059177965066}
   - component: {fileID: 3664056511315344494}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 7287284646704698878}
   - component: {fileID: 2062062045137689527}
   - component: {fileID: 5899990136235201571}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Slot 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,9 +275,9 @@ GameObject:
   - component: {fileID: 8735059416152025382}
   - component: {fileID: 3000724032716933795}
   - component: {fileID: 5747994294808706409}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -483,7 +483,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7323304173779077219}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: X Orientation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 213588394038601732}
   - component: {fileID: 5327515218581057990}
   - component: {fileID: 6866951409348566281}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Slot 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ GameObject:
   - component: {fileID: 7575385049519628330}
   - component: {fileID: 8118448874535215264}
   - component: {fileID: 969008597352546523}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Inventory Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -693,7 +693,7 @@ GameObject:
   - component: {fileID: 5086225449314184582}
   - component: {fileID: 1423739168090485778}
   - component: {fileID: 1122358372596823767}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Slot 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -768,7 +768,7 @@ GameObject:
   - component: {fileID: 331098417214046808}
   - component: {fileID: 5053186181166734921}
   - component: {fileID: 6226123438503236817}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Slot 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -843,7 +843,7 @@ GameObject:
   - component: {fileID: 2918846848066660291}
   - component: {fileID: 4021786410048246549}
   - component: {fileID: 6580149542316581299}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Slot 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -917,7 +917,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2377167802327040471}
   - component: {fileID: 7024123019334829217}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Slot Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

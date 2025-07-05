@@ -100,14 +100,14 @@ ModelImporter:
       firstFrame: 0
       lastFrame: 15
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: 180
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 0
+      loopBlendOrientation: 1
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
@@ -129,14 +129,14 @@ ModelImporter:
       firstFrame: 0
       lastFrame: 22
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: 180
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 0
-      loopBlendOrientation: 0
+      loopBlendOrientation: 1
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
@@ -158,17 +158,17 @@ ModelImporter:
       firstFrame: 0
       lastFrame: 22
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: 180
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
-      loopBlendOrientation: 0
+      loopBlendOrientation: 1
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
+      keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
@@ -232,7 +232,7 @@ ModelImporter:
     bakeAxisConversion: 0
     preserveHierarchy: 0
     skinWeightsMode: 0
-    maxBonesPerVertex: 4
+    maxBonesPerVertex: 1
     minBoneWeight: 0.001
     optimizeBones: 1
     meshOptimizationFlags: -1
@@ -265,39 +265,59 @@ ModelImporter:
       position: {x: 2.9244381e-18, y: 0.6868936, z: -0.006073222}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: Body
+    - name: Hips
       parentName: Radlad(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.10886688, y: 0, z: -0, w: 0.99405634}
+      position: {x: 0, y: 0.022, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: Head
-      parentName: Body
-      position: {x: -2.9244381e-18, y: 0.75060636, z: 0.006073222}
-      rotation: {x: -0.11559089, y: 0.07685578, z: -0.095760316, w: 0.98567843}
+    - name: LeftLeg
+      parentName: Hips
+      position: {x: 0.125, y: 0.009856358, z: 0.006073222}
+      rotation: {x: -0.13052619, y: -0, z: -0, w: 0.9914449}
       scale: {x: 1, y: 1, z: 1}
-    - name: Head_1
-      parentName: Head
-      position: {x: -0, y: 0.4375, z: 0}
+    - name: LeftLowerLeg
+      parentName: LeftLeg
+      position: {x: -0, y: -0.28125, z: 0}
+      rotation: {x: 0.25881907, y: -0, z: -0, w: 0.9659259}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftFeet
+      parentName: LeftLowerLeg
+      position: {x: -0, y: -0.30625, z: 0.012499999}
+      rotation: {x: -0.13052619, y: 0, z: -0, w: 0.9914449}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftFeet_1
+      parentName: LeftFeet
+      position: {x: -0, y: -0.50624996, z: -0.012499999}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: Head_2
-      parentName: Head
-      position: {x: -0, y: 0.4375, z: 0}
+    - name: LeftFeet_2
+      parentName: LeftFeet
+      position: {x: -0, y: -0.50624996, z: -0.012499999}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: Head_3
-      parentName: Head
-      position: {x: -0, y: 0.625, z: 0}
+    - name: LeftLowerLeg_1
+      parentName: LeftLowerLeg
+      position: {x: -0, y: -0.4375, z: 5.5511148e-18}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: Barrel
-      parentName: Body
-      position: {x: -2.9244381e-18, y: 0.0006063639, z: 0.006073222}
+    - name: LeftLowerLeg_2
+      parentName: LeftLowerLeg
+      position: {x: -0, y: -0.4375, z: 5.5511148e-18}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftUpperLeg
+      parentName: LeftLeg
+      position: {x: -0, y: -0.46875, z: 5.5511148e-18}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftUpperLeg_1
+      parentName: LeftLeg
+      position: {x: -0, y: -0.46875, z: 5.5511148e-18}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: RightLeg
-      parentName: Radlad(Clone)
-      position: {x: -0.125, y: 0.03185636, z: 0.006073222}
+      parentName: Hips
+      position: {x: -0.125, y: 0.009856358, z: 0.006073222}
       rotation: {x: 0.13052619, y: -0, z: -0, w: 0.9914449}
       scale: {x: 1, y: 1, z: 1}
     - name: RightLowerLeg
@@ -340,49 +360,34 @@ ModelImporter:
       position: {x: -0, y: -0.46875, z: 5.5511148e-18}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: LeftLeg
-      parentName: Radlad(Clone)
-      position: {x: 0.125, y: 0.03185636, z: 0.006073222}
-      rotation: {x: -0.13052619, y: 0, z: -0, w: 0.9914449}
+    - name: Body
+      parentName: Hips
+      position: {x: 0, y: -0.022, z: 0}
+      rotation: {x: -0.10886688, y: -0, z: -0, w: 0.99405634}
       scale: {x: 1, y: 1, z: 1}
-    - name: LeftLowerLeg
-      parentName: LeftLeg
-      position: {x: -0, y: -0.28125, z: 0}
-      rotation: {x: 0.25881907, y: -0, z: -0, w: 0.9659259}
-      scale: {x: 1, y: 1, z: 1}
-    - name: LeftFeet
-      parentName: LeftLowerLeg
-      position: {x: -0, y: -0.30625, z: 0.012499999}
-      rotation: {x: -0.13052619, y: 0, z: -0, w: 0.9914449}
-      scale: {x: 1, y: 1, z: 1}
-    - name: LeftFeet_1
-      parentName: LeftFeet
-      position: {x: -0, y: -0.50624996, z: -0.012499999}
+    - name: Barrel
+      parentName: Body
+      position: {x: -2.9244381e-18, y: 0.0006063639, z: 0.006073222}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: LeftFeet_2
-      parentName: LeftFeet
-      position: {x: -0, y: -0.50624996, z: -0.012499999}
+    - name: Head
+      parentName: Body
+      position: {x: -2.9244381e-18, y: 0.75060636, z: 0.006073222}
+      rotation: {x: -0.11559089, y: 0.07685578, z: -0.095760316, w: 0.98567843}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Head_1
+      parentName: Head
+      position: {x: -0, y: 0.4375, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: LeftLowerLeg_1
-      parentName: LeftLowerLeg
-      position: {x: -0, y: -0.4375, z: 5.5511148e-18}
+    - name: Head_2
+      parentName: Head
+      position: {x: -0, y: 0.4375, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: LeftLowerLeg_2
-      parentName: LeftLowerLeg
-      position: {x: -0, y: -0.4375, z: 5.5511148e-18}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: LeftUpperLeg
-      parentName: LeftLeg
-      position: {x: -0, y: -0.46875, z: 5.5511148e-18}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: LeftUpperLeg_1
-      parentName: LeftLeg
-      position: {x: -0, y: -0.46875, z: 5.5511148e-18}
+    - name: Head_3
+      parentName: Head
+      position: {x: -0, y: 0.625, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
