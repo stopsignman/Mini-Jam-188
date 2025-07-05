@@ -47,9 +47,7 @@ public class Item : Interactable
         transform.SetParent(null);
         transform.position = groundPoint;
         transform.rotation = Quaternion.Euler(0, 0, 0);
-        MeshCollider collider = gameObject.AddComponent<MeshCollider>();
-        collider.convex = true;
-        collider.sharedMesh = gameObject.GetComponent<MeshFilter>().mesh;
+        gameObject.GetComponent<BoxCollider>().enabled = true;
     }
 
     private void HandleInput()
