@@ -39,7 +39,6 @@ public class FirstPersonPlayer : MonoBehaviour
 
     public void PauseGame()
     {
-        pauseUI.SetActive(true);
         gamePaused = true;
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
@@ -48,7 +47,6 @@ public class FirstPersonPlayer : MonoBehaviour
 
     public void UnPauseGame()
     {
-        pauseUI.SetActive(false);
         gamePaused = false;
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
@@ -83,10 +81,12 @@ public class FirstPersonPlayer : MonoBehaviour
         {
             if (gamePaused)
             {
+                pauseUI.SetActive(false);
                 UnPauseGame();
             }
             else
             {
+                pauseUI.SetActive(true);
                 PauseGame();
             }
             // if (SaveManager.Instance.gamePaused)
