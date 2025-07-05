@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  blow: 10
   playerBullet: 1
 --- !u!65 &8004917308572156722
 BoxCollider:

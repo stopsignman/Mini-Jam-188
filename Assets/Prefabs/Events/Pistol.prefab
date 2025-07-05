@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7116310694078149194}
   - component: {fileID: 1631293332563235848}
   - component: {fileID: 8474206424816958421}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &8474206424816958421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a2410850e8ffc5429a1d8ad5093977e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdOffset: {x: 0, y: 0, z: 0}
-  inventorySprite: {fileID: 0}
+  holdOffset: {x: 0.8, y: 0.1, z: 1.4}
+  inventorySprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   held: 0
+  bulletPrefab: {fileID: 8654641361698044060, guid: dbab8e7455b7626429bd966e5e5af740, type: 3}

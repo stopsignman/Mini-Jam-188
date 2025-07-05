@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FirstPersonPlayer : MonoBehaviour
 {
@@ -26,11 +27,31 @@ public class FirstPersonPlayer : MonoBehaviour
     private float verticalInput;
     private Vector3 moveDirection;
     private Rigidbody rb;
+    public float damageMultiplier = 1f;
+    public bool gamePaused = false;
+    public GameObject pauseUI;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+    }
+
+    public void ReturnToMenu()
+    {
+        SaveManager.Instance.ReturnToMenu();
+    }
+    public void UnPauseGame()
+    {
+        pauseUI.SetActive(false);
+        gamePaused = false;
+        SaveManager.Instance.UnPauseGame();
+    }
+    public void PauseGame()
+    {
+        pauseUI.SetActive(true);
+        gamePaused = true;
+        SaveManager.Instance.PauseGame();
     }
 
     private void CalculateInput()
@@ -51,6 +72,17 @@ public class FirstPersonPlayer : MonoBehaviour
         else
         {
             running = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (gamePaused)
+            {
+                UnPauseGame();
+            }
+            else
+            {
+                PauseGame();
+            }
         }
     }
 

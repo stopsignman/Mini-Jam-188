@@ -1,8 +1,10 @@
 using UnityEngine;
+using System.Collections;
 
 public class Bullet : MonoBehaviour
 {
     public float speed = 10f;
+    public float blow = 10f;
     public bool playerBullet = true;
     private Rigidbody rb;
 
@@ -18,12 +20,27 @@ public class Bullet : MonoBehaviour
             Ray screenRay = playerCam.ScreenPointToRay(new Vector3(0.5f, 0.5f));
             Vector3 forwardPoint = screenRay.GetPoint(100f);
             float xForce = (transform.position.x - forwardPoint.x) * 0.001f;
-            rb.AddForce(new Vector3(orientation.forward.x - xForce, x_orientation.forward.y, orientation.forward.z) * 1000f);
+            rb.AddForce(new Vector3(orientation.forward.x - xForce, x_orientation.forward.y * 2, orientation.forward.z) * 1000f);
             rb.AddTorque(new Vector3(0, 100f, 0));
+        }
+        StartCoroutine(DestroyBullet());
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy") && playerBullet)
+        {
+            collision.gameObject.GetComponent<Damagee>().TakeDamage(blow);
+            Destroy(gameObject);
         }
     }
     private void Update()
     {
         // transform.Translate(Vector3.forward * Time.deltaTime * speed);
+    }
+
+    IEnumerator DestroyBullet()
+    {
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);
     }
 }
