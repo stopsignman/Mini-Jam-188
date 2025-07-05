@@ -43,6 +43,5 @@ public class EnemyAnimator : MonoBehaviour
     private void Update()
     {
         anim.SetFloat("speed_f", agent.velocity.magnitude);
-        Debug.Log(agent.velocity.magnitude);
     }
 }

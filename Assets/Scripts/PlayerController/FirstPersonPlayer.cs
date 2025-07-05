@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FirstPersonPlayer : MonoBehaviour
 {
@@ -27,11 +28,36 @@ public class FirstPersonPlayer : MonoBehaviour
     private Vector3 moveDirection;
     private Rigidbody rb;
     public float damageMultiplier = 1f;
+    public bool gamePaused = false;
+    public GameObject pauseUI;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+    }
+
+    public void PauseGame()
+    {
+        pauseUI.SetActive(true);
+        gamePaused = true;
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void UnPauseGame()
+    {
+        pauseUI.SetActive(false);
+        gamePaused = false;
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     private void CalculateInput()
@@ -52,6 +78,27 @@ public class FirstPersonPlayer : MonoBehaviour
         else
         {
             running = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (gamePaused)
+            {
+                UnPauseGame();
+            }
+            else
+            {
+                PauseGame();
+            }
+            // if (SaveManager.Instance.gamePaused)
+            // {
+            //     Time.timeScale = 1;
+            //     SaveManager.Instance.gamePaused = false;
+            // }
+            // else
+            // {
+            //     Time.timeScale = 0;
+            //     SaveManager.Instance.gamePaused = true;
+            // }
         }
     }
 
