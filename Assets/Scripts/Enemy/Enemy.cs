@@ -19,6 +19,9 @@ public class Enemy : MonoBehaviour
     public bool playerInSightRange, playerInAttackRange;
     private EnemyAnimator anim;
 
+    public float walkSpeed = 6;
+    public float sprintSpeed = 12;
+
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
@@ -41,7 +44,7 @@ public class Enemy : MonoBehaviour
         }
         if (playerInSightRange && playerInAttackRange)
         {
-            ChasePlayer();
+            // ChasePlayer();
             AttackPlayer();
         }
     }
@@ -49,7 +52,7 @@ public class Enemy : MonoBehaviour
     private void Patrolling()
     {
         anim.OnWander();
-        agent.speed = 11;
+        agent.speed = walkSpeed;
         if (!walkPointSet)
         {
             SetWalkPoint();
@@ -86,23 +89,20 @@ public class Enemy : MonoBehaviour
         anim.OnAlert();
         StartCoroutine(WaitForAlertAnim());
         agent.SetDestination(player.position);
-        agent.speed = 12;
+        agent.speed = sprintSpeed;
     }
 
     private void AttackPlayer()
     {
         agent.SetDestination(transform.position);
         Vector3 lookDirection = (player.position - transform.position).normalized;
-        transform.rotation = Quaternion.LookRotation(lookDirection);
+        // transform.rotation = Quaternion.LookRotation(lookDirection);
 
         if (!alreadyAttacked)
         {
             anim.OnAttack();
             StartCoroutine(WaitForAnimation());
-
-
             alreadyAttacked = true;
-            Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }
 
@@ -120,6 +120,7 @@ public class Enemy : MonoBehaviour
             Damager damager = gameObject.GetComponent<Damager>();
             damager.OnAttack(player.gameObject.GetComponent<Damagee>());
         }
+        Invoke(nameof(ResetAttack), timeBetweenAttacks);
     }
     IEnumerator WaitForAlertAnim()
     {

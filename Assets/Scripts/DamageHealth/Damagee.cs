@@ -25,6 +25,7 @@ public class Damagee : MonoBehaviour
                 anim.OnDeath();
                 Destroy(gameObject.GetComponent<Enemy>());
                 Destroy(gameObject.GetComponent<NavMeshAgent>());
+                gameObject.GetComponent<Rigidbody>().constraints |= RigidbodyConstraints.FreezeAll;
                 StartCoroutine(WaitForAnimation());
                 return;
             }
