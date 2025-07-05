@@ -44,7 +44,6 @@ public class Enemy : MonoBehaviour
         }
         if (playerInSightRange && playerInAttackRange)
         {
-            // ChasePlayer();
             AttackPlayer();
         }
     }
@@ -95,8 +94,6 @@ public class Enemy : MonoBehaviour
     private void AttackPlayer()
     {
         agent.SetDestination(transform.position);
-        Vector3 lookDirection = (player.position - transform.position).normalized;
-        // transform.rotation = Quaternion.LookRotation(lookDirection);
 
         if (!alreadyAttacked)
         {
