@@ -1,11 +1,12 @@
 using UnityEngine;
 
-public class LuckyBox : MonoBehaviour
+public class LuckyBox : Interactable
 {
     public GameObject[] events = {};
     public int index = 0;
+    
 
-    private void Start()
+    public override void OnInteract(GameObject player)
     {
         OpenBox();
     }
