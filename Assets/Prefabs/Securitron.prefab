@@ -14,15 +14,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52eddc65ced0d5d41a853f880f053673, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.81
+      value: 14.643131
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52eddc65ced0d5d41a853f880f053673, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.606
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52eddc65ced0d5d41a853f880f053673, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.68
+      value: -3.8922787
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52eddc65ced0d5d41a853f880f053673, type: 3}
       propertyPath: m_LocalRotation.w
@@ -322,7 +322,7 @@ MonoBehaviour:
   walkPointRange: 10
   timeBetweenAttacks: 0
   sightRange: 25
-  attackRange: 2
+  attackRange: 4
   playerInSightRange: 0
   playerInAttackRange: 0
   walkSpeed: 1
@@ -368,12 +368,12 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &2978372426571626097

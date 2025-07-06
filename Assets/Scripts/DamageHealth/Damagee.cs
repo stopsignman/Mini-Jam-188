@@ -29,7 +29,8 @@ public class Damagee : MonoBehaviour
                 StartCoroutine(WaitForAnimation());
                 return;
             }
-            if (gameObject.CompareTag("Player")) {
+            if (gameObject.CompareTag("Player"))
+            {
                 Camera playerCam = transform.GetChild(0).gameObject.GetComponent<Camera>();
                 Destroy(playerCam.gameObject.GetComponent<FirstPersonCamera>());
                 Destroy(gameObject.GetComponent<FirstPersonPlayer>());
@@ -45,14 +46,16 @@ public class Damagee : MonoBehaviour
         }
     }
 
-    public void RestartGame() {
+    public void RestartGame()
+    {
         SceneManager.LoadScene(1);
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
-    public void ReturnToMenU() {
+    public void ReturnToMenU()
+    {
         SceneManager.LoadScene(0);
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.None;
@@ -60,15 +63,22 @@ public class Damagee : MonoBehaviour
 
     IEnumerator WaitForAnimation()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         Destroy(gameObject);
     }
 
-    IEnumerator DelayDeath() {
+    IEnumerator DelayDeath()
+    {
         yield return new WaitForSeconds(2);
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         deathUI.SetActive(true);
+    }
+
+    IEnumerator Knockback(NavMeshAgent agent)
+    {
+        yield return new WaitForSeconds(2);
+        agent.enabled = true;
     }
 }

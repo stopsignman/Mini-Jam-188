@@ -995,8 +995,8 @@ MonoBehaviour:
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 10
   timeBetweenAttacks: 0
-  sightRange: 10
-  attackRange: 1
+  sightRange: 30
+  attackRange: 2
   playerInSightRange: 0
   playerInAttackRange: 0
   walkSpeed: 6
@@ -1054,12 +1054,12 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &3115632996279273078
@@ -1087,7 +1087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc025eac790f5604c88240344479e5ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 70
   deathUI: {fileID: 0}
 --- !u!136 &3817485572283567097
 CapsuleCollider:
