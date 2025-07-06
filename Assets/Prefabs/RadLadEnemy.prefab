@@ -1095,7 +1095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc025eac790f5604c88240344479e5ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 70
+  health: 40
   deathUI: {fileID: 0}
 --- !u!136 &3817485572283567097
 CapsuleCollider:
