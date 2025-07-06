@@ -33,7 +33,6 @@ public class Bullet : MonoBehaviour
             Destroy(transform.GetChild(0).GetComponent<MeshRenderer>());
             Destroy(gameObject.GetComponent<Rigidbody>());
             Destroy(gameObject.GetComponent<BoxCollider>());
-            Debug.Log("hit");
             StartCoroutine(WaitForTrail());
         }
     }

@@ -43,7 +43,7 @@ public class Item : Interactable
         }
     }
 
-    public void Detach(Vector3 groundPoint)
+    public virtual void Detach(Vector3 groundPoint)
     {
         transform.SetParent(null);
         transform.position = groundPoint;
@@ -51,7 +51,7 @@ public class Item : Interactable
         gameObject.GetComponent<BoxCollider>().enabled = true;
     }
 
-    private void HandleInput()
+    public void HandleInput()
     {
         if (Input.GetMouseButtonDown(0) && held)
         {
