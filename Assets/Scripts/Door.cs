@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public GameObject leftDoor;
-    public GameObject rightDoor;
     public float openAmount;
     private float curOpenAmount = 0f;
     public LuckyBox openBox;
@@ -27,8 +25,7 @@ public class Door : MonoBehaviour
 
     private bool OpenDoor()
     {
-        leftDoor.transform.Translate(-transform.right * openSpeed * Time.deltaTime);
-        rightDoor.transform.Translate(transform.right * openSpeed * Time.deltaTime);
+        gameObject.transform.Translate(-transform.up * openSpeed * Time.deltaTime);
         curOpenAmount += openSpeed * Time.deltaTime;
         if (curOpenAmount > openAmount)
         {
