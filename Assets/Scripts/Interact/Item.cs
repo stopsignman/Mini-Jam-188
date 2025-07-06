@@ -7,6 +7,7 @@ public class Item : Interactable
     public Sprite inventorySprite;
     public bool held = false;
     private GameObject playerRef;
+    public Quaternion heldRotation = Quaternion.Euler(0, 0, 0);
     public override void OnInteract(GameObject player)
     {
         playerRef = player;
@@ -38,7 +39,7 @@ public class Item : Interactable
             transform.SetParent(playerRef.transform.GetChild(0).transform);
             transform.localPosition = new Vector3(0, 0, 0);
             transform.localPosition += holdOffset;
-            transform.localRotation = Quaternion.Euler(0, 0, 0);
+            transform.localRotation = heldRotation;
         }
     }
 

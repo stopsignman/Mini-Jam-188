@@ -14,15 +14,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52eddc65ced0d5d41a853f880f053673, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.81
+      value: 14.643131
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52eddc65ced0d5d41a853f880f053673, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.606
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52eddc65ced0d5d41a853f880f053673, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.68
+      value: -3.8922787
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52eddc65ced0d5d41a853f880f053673, type: 3}
       propertyPath: m_LocalRotation.w
@@ -322,7 +322,7 @@ MonoBehaviour:
   walkPointRange: 10
   timeBetweenAttacks: 0
   sightRange: 25
-  attackRange: 2
+  attackRange: 4
   playerInSightRange: 0
   playerInAttackRange: 0
   walkSpeed: 1

@@ -111,7 +111,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator WaitForAnimation()
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.2f);
         if (playerInSightRange && playerInAttackRange)
         {
             Damager damager = gameObject.GetComponent<Damager>();
