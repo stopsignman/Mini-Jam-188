@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -32,6 +33,8 @@ public class FirstPersonPlayer : MonoBehaviour
     public bool gamePaused = false;
     public GameObject pauseUI;
     public Slider healthBar;
+    public GameObject leg;
+    private bool canKick = true;
 
     private void Start()
     {
@@ -112,7 +115,7 @@ public class FirstPersonPlayer : MonoBehaviour
             {
                 rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultipler * moveMultiplier, ForceMode.Force);
             }
-            
+
         }
     }
 
@@ -130,6 +133,17 @@ public class FirstPersonPlayer : MonoBehaviour
         CalculateInput();
         SpeedControl();
         healthBar.value = gameObject.GetComponent<Damagee>().health;
+        if (Input.GetKeyDown(KeyCode.F) && canKick)
+        {
+            canKick = false;
+            leg.GetComponent<Animator>().SetBool("kicking_b", true);
+            Damager damager = gameObject.GetComponent<Damager>();
+            Camera playerCamera = transform.GetChild(0).gameObject.GetComponent<Camera>();
+            var ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+            Physics.Raycast(ray, out var hit, 5f);
+            hit.collider?.GetComponent<Damagee>().TakeDamage(damager.blow);
+            StartCoroutine(WaitForLeg());
+        }
     }
 
     private void FixedUpdate()
@@ -158,5 +172,12 @@ public class FirstPersonPlayer : MonoBehaviour
     private void ResetJump()
     {
         readyToJump = true;
+    }
+
+    IEnumerator WaitForLeg()
+    {
+        yield return new WaitForSeconds(0.3f);
+        leg.GetComponent<Animator>().SetBool("kicking_b", false);
+        canKick = true;
     }
 }
