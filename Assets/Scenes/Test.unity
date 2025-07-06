@@ -2281,7 +2281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5240140955132284647, guid: e2f0800682c76a94ab904b63f9715635, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.25
+      value: 0.879
       objectReference: {fileID: 0}
     - target: {fileID: 5240140955132284647, guid: e2f0800682c76a94ab904b63f9715635, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2318,10 +2318,6 @@ PrefabInstance:
     - target: {fileID: 6420401154751074992, guid: e2f0800682c76a94ab904b63f9715635, type: 3}
       propertyPath: m_Name
       value: Lucky Box
-      objectReference: {fileID: 0}
-    - target: {fileID: 7716995442904908757, guid: e2f0800682c76a94ab904b63f9715635, type: 3}
-      propertyPath: index
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
