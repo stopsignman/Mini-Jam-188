@@ -9,6 +9,7 @@ public class Damagee : MonoBehaviour
     [System.NonSerialized]
     public float maxHealth;
     public GameObject deathUI;
+    public AudioClip[] damageSounds;
 
     private void Start()
     {
@@ -17,6 +18,15 @@ public class Damagee : MonoBehaviour
     public void TakeDamage(float blow)
     {
         health -= blow;
+        if (gameObject.CompareTag("Player"))
+        {
+            gameObject.GetComponent<AudioSource>().PlayOneShot(damageSounds[0], 1);
+        }
+        else
+        {
+            gameObject.GetComponent<AudioSource>().PlayOneShot(damageSounds[1], 2);
+        }
+        
         if (health <= 0)
         {
             if (gameObject.CompareTag("Enemy"))
@@ -41,6 +51,7 @@ public class Damagee : MonoBehaviour
                 playerCam.gameObject.transform.position = down_point;
                 playerCam.gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
                 gameObject.GetComponent<FirstPersonPlayer>().healthBar.transform.parent.gameObject.SetActive(false);
+                LevelManager.Instance.OnDeath();
                 StartCoroutine(DelayDeath());
             }
         }

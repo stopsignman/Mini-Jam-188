@@ -255,5 +255,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  blow: 10
+  blow: 20
   playerBullet: 1
+  damageMultiplier: 1

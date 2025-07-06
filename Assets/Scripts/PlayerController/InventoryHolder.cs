@@ -25,7 +25,15 @@ public class InventoryHolder : MonoBehaviour
             heldItems.Add(item);
             item.GetComponent<BoxCollider>().enabled = false;
             item.SetActive(false);
-            HoldItem(heldItems.Count - 1);
+            if (heldItems.Count >= 1)
+            {
+                HoldItem(heldItems.Count - 1);
+            }
+            else
+            {
+                HoldItem(0);
+            }
+            
         }
     }
 
@@ -62,14 +70,10 @@ public class InventoryHolder : MonoBehaviour
         Vector3 for_point = for_ray.GetPoint(1f);
         Ray down_ray = new Ray(for_point, Vector3.down);
         Vector3 point = down_ray.GetPoint(dropHeight * 0.5f);
-        heldItem.GetComponent<Item>().Detach(point);
-        heldItem.GetComponent<Item>().held = false;
+        heldItem.GetComponent<Gun>().Detach(point);
+        heldItem.GetComponent<Gun>().held = false;
         heldItems.RemoveAt(heldIndex);
         heldItem = null;
-        if (heldItems.Count >= 1)
-        {
-            HoldItem(0);
-        }
         UpdateUI();
     }
 

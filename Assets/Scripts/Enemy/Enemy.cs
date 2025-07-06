@@ -21,12 +21,26 @@ public class Enemy : MonoBehaviour
 
     public float walkSpeed = 6;
     public float sprintSpeed = 12;
+    public AudioClip[] enemySounds;
+    private AudioSource audioSource;
+    public bool randomSound = true;
 
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<EnemyAnimator>();
+        audioSource = GetComponent<AudioSource>();
+        if (randomSound)
+        {
+            StartCoroutine(PlayRandomSound());
+        }
+        else
+        {
+            audioSource.loop = true;
+            audioSource.clip = enemySounds[0];
+            audioSource.Play();
+        }
     }
 
     private void Update()
@@ -111,7 +125,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator WaitForAnimation()
     {
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.5f);
         if (playerInSightRange && playerInAttackRange)
         {
             Damager damager = gameObject.GetComponent<Damager>();
@@ -123,5 +137,12 @@ public class Enemy : MonoBehaviour
     {
         yield return new WaitForSeconds(.5f);
         anim.StopAlert();
+    }
+
+    IEnumerator PlayRandomSound()
+    {
+        yield return new WaitForSeconds(Random.Range(2, 6));
+        audioSource.PlayOneShot(enemySounds[Random.Range(0, enemySounds.Length - 1)], 2);
+        StartCoroutine(PlayRandomSound());
     }
 }
