@@ -12,7 +12,7 @@ public class LuckyBox : MonoBehaviour
 
     private void OpenBox()
     {
-        Vector3 spawnPos = new Vector3(transform.position.x, transform.position.y + .5f, transform.position.z);
+        Vector3 spawnPos = new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z);
         Instantiate(events[index], spawnPos, events[index].transform.rotation);
     }
 }
