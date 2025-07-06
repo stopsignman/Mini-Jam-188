@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     public float blow = 10f;
     public bool playerBullet = true;
     private Rigidbody rb;
+    public float damageMultiplier = 1f;
 
     private void Start()
     {
@@ -29,7 +30,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy") && playerBullet)
         {
-            collision.gameObject.GetComponent<Damagee>().TakeDamage(blow);
+            collision.gameObject.GetComponent<Damagee>().TakeDamage(blow * damageMultiplier);
             Destroy(transform.GetChild(0).GetComponent<MeshRenderer>());
             Destroy(gameObject.GetComponent<Rigidbody>());
             Destroy(gameObject.GetComponent<BoxCollider>());

@@ -129,4 +129,6 @@ MonoBehaviour:
   - {fileID: 1299801800427330819, guid: 2bfc435e9644c964eb1186a925450e57, type: 3}
   - {fileID: 8484072450905294257, guid: 1760b48014fcfed45bbc48f9813ff153, type: 3}
   - {fileID: 8552928217795744962, guid: 25289cd825a17474493a16f4f2fec6fc, type: 3}
+  - {fileID: 8484072450905294257, guid: 8a48f6f3fb41d1a44b038dc0919c2320, type: 3}
   index: 0
+  opened: 0
