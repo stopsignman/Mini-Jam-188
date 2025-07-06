@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -35,6 +36,7 @@ public class FirstPersonPlayer : MonoBehaviour
     public Slider healthBar;
     public GameObject leg;
     private bool canKick = true;
+    public AudioSource moveSFX;
 
     private void Start()
     {
@@ -65,6 +67,15 @@ public class FirstPersonPlayer : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
+        if (horizontalInput == 0 && verticalInput == 0)
+        {
+            moveSFX.mute = true;
+        }
+        else
+        {
+            moveSFX.mute = false;
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) && readyToJump && grounded)
         {
             readyToJump = false;
@@ -78,6 +89,14 @@ public class FirstPersonPlayer : MonoBehaviour
         else
         {
             running = false;
+        }
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            moveSFX.pitch = 1.5f;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            moveSFX.pitch = 1;
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -108,6 +127,7 @@ public class FirstPersonPlayer : MonoBehaviour
         }
         else
         {
+            moveSFX.mute = true;
             if (running)
             {
                 rb.AddForce(moveDirection.normalized * sprintSpeed * 10f * airMultipler * moveMultiplier, ForceMode.Force);

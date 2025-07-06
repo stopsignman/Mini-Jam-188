@@ -53,7 +53,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7716995442904908757
 MonoBehaviour:
@@ -78,6 +78,7 @@ MonoBehaviour:
   - {fileID: 8484072450905294257, guid: 8a48f6f3fb41d1a44b038dc0919c2320, type: 3}
   index: 6
   opened: 0
+  confettiPrefab: {fileID: 8037940924972095409, guid: 5caf6b32bff4586428c6d12daa28992b, type: 3}
 --- !u!1001 &6668093534238341707
 PrefabInstance:
   m_ObjectHideFlags: 0

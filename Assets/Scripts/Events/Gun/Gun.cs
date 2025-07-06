@@ -33,6 +33,7 @@ public class Gun : Item
     {
         if (canShoot && curNumBullets > 0)
         {
+            gameObject.GetComponent<AudioSource>().Play();
             bullet = Instantiate(bulletPrefab, transform.position + (transform.right * 0.5f), bulletPrefab.transform.rotation).GetComponent<Bullet>();
             bullet.playerBullet = true;
             bullet.damageMultiplier = damageMultiplier;
