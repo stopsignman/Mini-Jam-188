@@ -40,6 +40,7 @@ public class FirstPersonPlayer : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        leg.GetComponent<Animation>()["Kick"].wrapMode = WrapMode.Once;
     }
 
     public void ReturnToMenu()
@@ -136,13 +137,13 @@ public class FirstPersonPlayer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && canKick)
         {
             canKick = false;
-            leg.GetComponent<Animator>().SetBool("kicking_b", true);
+            leg.GetComponent<Animation>().Play("Kick");
             Damager damager = gameObject.GetComponent<Damager>();
             Camera playerCamera = transform.GetChild(0).gameObject.GetComponent<Camera>();
             var ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
             Physics.Raycast(ray, out var hit, 5f);
-            hit.collider?.GetComponent<Damagee>().TakeDamage(damager.blow);
             StartCoroutine(WaitForLeg());
+            hit.collider?.GetComponent<Damagee>().TakeDamage(damager.blow);
         }
     }
 
@@ -176,8 +177,7 @@ public class FirstPersonPlayer : MonoBehaviour
 
     IEnumerator WaitForLeg()
     {
-        yield return new WaitForSeconds(0.3f);
-        leg.GetComponent<Animator>().SetBool("kicking_b", false);
+        yield return new WaitForSeconds(0.5f);
         canKick = true;
     }
 }
