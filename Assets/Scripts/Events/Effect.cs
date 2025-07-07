@@ -27,17 +27,15 @@ public class Effect : Event
                     case 0:
                         FirstPersonPlayer shooter = player.GetComponent<FirstPersonPlayer>();
                         shooter.damageMultiplier = damangeMultiplierIncrease;
-                        StartCoroutine(RemoveDamageIncrease(shooter));
                         Debug.Log("damage increase");
                         break;
                     case 1:
                         FirstPersonPlayer playerController = player.GetComponent<FirstPersonPlayer>();
                         playerController.moveMultiplier = movementMultiplierIncrease;
-                        StartCoroutine(RemoveMovementIncrease(playerController));
                         Debug.Log("movement increase");
                         break;
                     case 2:
-                        damagee.health -= damagee.maxHealth / 2;
+                        damagee.health -= damagee.health / 2;
                         Debug.Log("lose half");
                         break;
                     case 3:
@@ -52,7 +50,7 @@ public class Effect : Event
                 Debug.LogError("Player not found! - Effect event");
             }
         }
-        else
+        if (gunChange)
         {
             Gun gun = LevelManager.Instance.gun;
             if (gun != null)
@@ -70,18 +68,9 @@ public class Effect : Event
                         return;
                 }
             }
+
         }
-    }
-
-    IEnumerator RemoveDamageIncrease(FirstPersonPlayer shooter)
-    {
-        yield return new WaitForSeconds(60);
-        shooter.damageMultiplier = 1;
-    }
-
-    IEnumerator RemoveMovementIncrease(FirstPersonPlayer playerController)
-    {
-        yield return new WaitForSeconds(60);
-        playerController.moveMultiplier = 1;
+        LevelManager.Instance.OnBoxOpen(eventName);
+        Destroy(gameObject);
     }
 }

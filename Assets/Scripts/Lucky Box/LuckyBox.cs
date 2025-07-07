@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class LuckyBox : Interactable
 {
-    public GameObject[] events = {};
+    public GameObject[] events;
     public int index = 0;
     public bool opened = false;
     public GameObject confettiPrefab;
@@ -19,6 +19,7 @@ public class LuckyBox : Interactable
     private void OpenBox()
     {
         opened = true;
+        LevelManager.Instance.curBoxesOpened++;
         Instantiate(events[index], transform.position, events[index].transform.rotation);
         Instantiate(confettiPrefab, transform.position, confettiPrefab.transform.rotation);
         Destroy(gameObject);

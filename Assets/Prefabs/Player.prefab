@@ -719,7 +719,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: a3c4baec8524d1047b822d9cce68593c, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -1111,6 +1111,7 @@ MonoBehaviour:
   health: 100
   deathUI: {fileID: 7243420296410176835}
   damageSounds: []
+  explosionPrefab: {fileID: 0}
 --- !u!114 &5747994294808706409
 MonoBehaviour:
   m_ObjectHideFlags: 0

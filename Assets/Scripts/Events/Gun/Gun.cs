@@ -66,5 +66,6 @@ public class Gun : Item
     private void Start()
     {
         numBullets = maxBullets;
+        LevelManager.Instance.OnBoxOpen("Use the gun. Take care of those who stand in your way.");
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,6 +13,9 @@ public class LevelManager : MonoBehaviour
     public Image whiteImage;
     private bool fading = false;
     public float fadeSpeed = 1f;
+    public TextMeshProUGUI eventText;
+    public int curBoxesOpened = 0;
+    public TextMeshProUGUI boxText;
 
     void Awake()
     {
@@ -40,7 +44,13 @@ public class LevelManager : MonoBehaviour
         if (fading)
         {
             whiteImage.color = new Color(1, 1, 1, whiteImage.color.a + (fadeSpeed * Time.deltaTime));
-        }   
+        }
+        boxText.text = curBoxesOpened.ToString();
+    }
+
+    public void OnBoxOpen(string text)
+    {
+        eventText.text = text;
     }
 
     IEnumerator WaitForFade()
