@@ -10,6 +10,7 @@ public class Damagee : MonoBehaviour
     public float maxHealth;
     public GameObject deathUI;
     public AudioClip[] damageSounds;
+    public GameObject explosionPrefab;
 
     private void Start()
     {
@@ -76,6 +77,7 @@ public class Damagee : MonoBehaviour
     IEnumerator WaitForAnimation()
     {
         yield return new WaitForSeconds(1);
+        Instantiate(explosionPrefab, transform.position, explosionPrefab.transform.rotation);
         Destroy(gameObject);
     }
 

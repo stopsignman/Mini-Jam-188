@@ -397,6 +397,7 @@ MonoBehaviour:
   damageSounds:
   - {fileID: 8300000, guid: 775961b3f7565c345a670fe42af1ac0d, type: 3}
   - {fileID: 8300000, guid: 5d209314ba6d815438ff943860478ea8, type: 3}
+  explosionPrefab: {fileID: 5756913907526441240, guid: 9d4b81081e17984419e9125b1f7021c9, type: 3}
 --- !u!114 &5771886981689438555
 MonoBehaviour:
   m_ObjectHideFlags: 0

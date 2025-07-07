@@ -1082,8 +1082,6 @@ MonoBehaviour:
   healthBar: {fileID: 2730033466894875630}
   leg: {fileID: 1307104111066599108}
   moveSFX: {fileID: 470237290529356684}
-  walkSFX: {fileID: 8300000, guid: 40122620fe925e843a1f826cc7293bf2, type: 3}
-  runSFX: {fileID: 8300000, guid: 33053ab1d10eb864f83505746e3ed0b3, type: 3}
 --- !u!114 &8735059416152025382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1112,6 +1110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   deathUI: {fileID: 7243420296410176835}
+  damageSounds: []
 --- !u!114 &5747994294808706409
 MonoBehaviour:
   m_ObjectHideFlags: 0

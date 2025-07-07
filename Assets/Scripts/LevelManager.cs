@@ -1,10 +1,17 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
     public Gun gun = null;
     public AudioClip deathSound;
+    public AudioClip winSound;
+    public Image whiteImage;
+    private bool fading = false;
+    public float fadeSpeed = 1f;
 
     void Awake()
     {
@@ -17,5 +24,28 @@ public class LevelManager : MonoBehaviour
         AudioSource audioSource = gameObject.GetComponent<AudioSource>();
         audioSource.Stop();
         audioSource.PlayOneShot(deathSound, 2);
+    }
+
+    public void OnWin()
+    {
+        AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.Stop();
+        audioSource.PlayOneShot(winSound, 2);
+        fading = true;
+        StartCoroutine(WaitForFade());
+    }
+
+    private void Update()
+    {
+        if (fading)
+        {
+            whiteImage.color = new Color(1, 1, 1, whiteImage.color.a + (fadeSpeed * Time.deltaTime));
+        }   
+    }
+
+    IEnumerator WaitForFade()
+    {
+        yield return new WaitForSeconds(13);
+        SceneManager.LoadScene(2);
     }
 }
