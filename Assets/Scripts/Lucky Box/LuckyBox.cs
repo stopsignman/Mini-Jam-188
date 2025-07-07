@@ -19,8 +19,7 @@ public class LuckyBox : Interactable
     private void OpenBox()
     {
         opened = true;
-        Vector3 spawnPos = new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z);
-        Instantiate(events[index], spawnPos, events[index].transform.rotation);
+        Instantiate(events[index], transform.position, events[index].transform.rotation);
         Instantiate(confettiPrefab, transform.position, confettiPrefab.transform.rotation);
         Destroy(gameObject);
     }

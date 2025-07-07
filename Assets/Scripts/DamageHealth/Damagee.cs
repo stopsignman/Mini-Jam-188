@@ -18,13 +18,13 @@ public class Damagee : MonoBehaviour
     public void TakeDamage(float blow)
     {
         health -= blow;
-        if (gameObject.CompareTag("Player"))
+        if (gameObject.CompareTag("Enemy"))
         {
             gameObject.GetComponent<AudioSource>().PlayOneShot(damageSounds[0], 1);
         }
-        else
+        if (gameObject.CompareTag("Player"))
         {
-            gameObject.GetComponent<AudioSource>().PlayOneShot(damageSounds[1], 2);
+            gameObject.transform.GetChild(0).gameObject.GetComponent<AudioSource>().PlayOneShot(damageSounds[0], 1);
         }
         
         if (health <= 0)
@@ -36,6 +36,7 @@ public class Damagee : MonoBehaviour
                 Destroy(gameObject.GetComponent<Enemy>());
                 Destroy(gameObject.GetComponent<NavMeshAgent>());
                 gameObject.GetComponent<Rigidbody>().constraints |= RigidbodyConstraints.FreezeAll;
+                gameObject.GetComponent<AudioSource>().PlayOneShot(damageSounds[1], 2);
                 StartCoroutine(WaitForAnimation());
                 return;
             }

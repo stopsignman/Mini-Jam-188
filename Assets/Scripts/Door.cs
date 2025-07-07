@@ -4,13 +4,22 @@ public class Door : MonoBehaviour
 {
     public float openAmount;
     private float curOpenAmount = 0f;
-    public LuckyBox openBox;
+    public LuckyBox[] boxesToOpen;
     public float openSpeed;
     private bool doorOpened = false;
+    private bool canOpen = false;
 
     private void Update()
     {
-        if (openBox.opened)
+        canOpen = true;
+        foreach (LuckyBox box in boxesToOpen)
+        {
+            if (!box.opened)
+            {
+                canOpen = false;
+            }
+        }
+        if (canOpen)
         {
             if (!doorOpened)
             {

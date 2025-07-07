@@ -9,11 +9,12 @@ public class LevelManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        gameObject.GetComponent<AudioSource>().Play();
     }
 
     public void OnDeath()
     {
-        AudioSource audioSource = GetComponent<AudioSource>();
+        AudioSource audioSource = gameObject.GetComponent<AudioSource>();
         audioSource.Stop();
         audioSource.PlayOneShot(deathSound, 2);
     }
