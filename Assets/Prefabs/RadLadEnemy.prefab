@@ -1000,8 +1000,8 @@ MonoBehaviour:
   attackRange: 2
   playerInSightRange: 0
   playerInAttackRange: 0
-  walkSpeed: 6
-  sprintSpeed: 12
+  walkSpeed: 12
+  sprintSpeed: 24
   enemySounds:
   - {fileID: 8300000, guid: 430255b77ff9a634b8e1904c78469022, type: 3}
   - {fileID: 8300000, guid: cbbe0b50d303bdb4986e82658174c077, type: 3}
@@ -1082,7 +1082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d19eac36a6aa3a4a8be4280a37175fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blow: 5
+  blow: 15
 --- !u!114 &6142409534361545516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1095,7 +1095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc025eac790f5604c88240344479e5ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 40
+  health: 80
   deathUI: {fileID: 0}
   damageSounds:
   - {fileID: 8300000, guid: 775961b3f7565c345a670fe42af1ac0d, type: 3}
