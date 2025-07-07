@@ -328,8 +328,8 @@ MonoBehaviour:
   attackRange: 4
   playerInSightRange: 0
   playerInAttackRange: 0
-  walkSpeed: 1
-  sprintSpeed: 3
+  walkSpeed: 5
+  sprintSpeed: 8
   enemySounds:
   - {fileID: 8300000, guid: 24fc7f1ffc4183e4b9deef871e2f278c, type: 3}
   - {fileID: 8300000, guid: f4e22f3988cd0b04b852ca060eafd6b9, type: 3}
@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d19eac36a6aa3a4a8be4280a37175fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blow: 25
+  blow: 50
 --- !u!114 &7728361186835041193
 MonoBehaviour:
   m_ObjectHideFlags: 0
