@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class FirstPersonPlayer : MonoBehaviour
 {
     private float moveSpeed = 4f;
-    private float sprintSpeed = 45f;
+    private float sprintSpeed = 25f;
     public float moveMultiplier = 1f;
     private bool running = false;
     [SerializeField]

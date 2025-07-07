@@ -22,6 +22,7 @@ public class LuckyBox : Interactable
         LevelManager.Instance.curBoxesOpened++;
         Instantiate(events[index], transform.position, events[index].transform.rotation);
         Instantiate(confettiPrefab, transform.position, confettiPrefab.transform.rotation);
-        Destroy(gameObject);
+        Destroy(gameObject.transform.GetChild(0).gameObject);
+        Destroy(GetComponent<BoxCollider>());
     }
 }
